@@ -20,6 +20,11 @@
   font-family: Helvetica;
   padding: 50px;
   box-shadow: 3px 4px 5px 1px #6b6b6b; }
+  .flash-card h3 {
+    font-size: 20px;
+    margin-bottom: 30px;
+    font-weight: bold;
+  }
   .flash-card h1 {
     font-size: 40px;
     text-align: center;
@@ -58,7 +63,9 @@
     color: red; }
 
 #statistics {
-  padding: 40px; }
+  padding: 40px;
+  position: fixed;
+  right: 5px; }
   #statistics:before, #statistics:after {
     content: " ";
     /* 1 */
