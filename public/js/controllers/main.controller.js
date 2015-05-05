@@ -8,31 +8,23 @@ app.controller('MainController', function ($scope,
       'Node'
   ];
 
-  $scope.answerQuestion = function (answer, flashCard) {
-    if (!flashCard.answered) {
-      flashCard.answered = true;
-      flashCard.answeredCorrectly = answer.correct;
-      if (flashCard.answeredCorrectly === true){
-        ScoreFactory.correct++;
-      } else {
-        ScoreFactory.incorrect++;
-      }
-    }
-  };
-
 
   $scope.getAllCards = function() {
+    $scope.showLoader = true;
       FlashCardFactory.getFlashCards().then(function(data) {
         $scope.flashCards = data;
         $scope.selectedCategory = '_all';
+        $scope.showLoader = false;
       });
 
     };
 
 
   $scope.getCategoryCards = function(category) {
+      $scope.showLoader = true;
       FlashCardFactory.getFlashCards(category).then(function(data) {
         $scope.flashCards = data;
+        $scope.showLoader = false;
       });
       $scope.selectedCategory = category;
   };

@@ -62,6 +62,10 @@
   .answer-feedback.incorrect {
     color: red; }
 
+.border-on-hover {
+    border: 2px solid black;
+}
+
 #statistics {
   padding: 40px;
   position: fixed;
